@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for-items="{{banner_list[0].banner}}">
+      <swiper-item>
+        <image src="{{item.pic_url}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+<view class="container">
+
+  <view class='floortitle'>商家简介</view>
+  <view class="huanhang"></view>
+  <view class="jianjie">
+    <text>{{text}}</text>TESTD
+  </view>
+  <view class="lianxi">商家联系方式</view>
+  <view class="client">
+    <image wx:for="{{pictures}}" wx:key="unique"src="{{item}}" data-index="{{index}}" bindtap="previewImage" class="image"></image>
+    <view>
+      <view class="clientdesc">
+        <button class="button" bindtap="makemap">地址：哈尔滨市道里区群力</button>
+        <button class="button">{{shijian}}</button>
+        <button bindtap="makePhoneCall" class="button">联系方式：0451-XXXXXXXX</button>
+        <button class="button">{{weixinhao}}</button>
+      </view>
+    </view>
+  </view>
+<view class="lianxi">开发人员联系方式</view>
+  <view class="myself">
+    <image src="../images/self.png" class="image" bindtap="previewImage"></image>
+    <view>
+      <view class="myselfdesc">
+
+        <button class="button2" bindtap="makePhoneCall2"><text>{{selftext}}</text></button>
+      </view>
+    </view>
+  </view>
+</view>
